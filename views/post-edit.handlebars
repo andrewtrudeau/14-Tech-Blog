@@ -1,0 +1,31 @@
+<div class="main_container">
+
+  <form class="form login-form">
+    {{#if newPost}}
+    <h2>New Post</h2>
+    {{else}}
+    <h2>Edit Post</h2>
+    {{/if}}
+    <div class="form-group">
+      <label for="title">Title</label><br>
+      <input class="form-input" type="text" id="title" value="{{post.title}}" />
+    </div>
+    <div class="form-group">
+      <label for="content">Content</label><br>
+      <textarea class="form-input" id="content">{{post.content}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Finish.</button>
+    </div>
+
+    <input id="userID" type="text" value="{{user.id}}" hidden>
+    <input id="userName" type="text" value="{{user.name}}" hidden>
+    <input id="editType" type="text" value="{{editType}}" hidden>
+    <input id="postID" type="text" value="{{post.id}}" hidden>
+
+  </form>
+
+  <script src="/js/post.js"></script>
+
+</div>

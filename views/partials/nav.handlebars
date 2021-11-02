@@ -1,0 +1,66 @@
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+<div class="wrapper collapse">
+
+  <div class="top_navbar">
+    <div class="hamburger">
+      <div class="one"></div>
+      <div class="two"></div>
+      <div class="three"></div>
+    </div>
+    <div class="top_menu">
+      <div class="logo">
+        Dashboard
+      </div>
+      <ul>
+        <li><a href="https://github.com/andrewtrudeau/14-Tech-Blog" title="My Github Page" target="_blank">
+            <i class="fab fa-github"></i>
+          </a></li>
+        <li><a href="#" title="My Profile">
+            <i class="fas fa-user"></i>
+          </a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <ul>
+      <li><a href="/home" id="home">
+          <span class="icon"><i class="fas fa-home"></i></span>
+          <span class="title">Home</span>
+        </a></li>
+      <li><a href="/dashboard" id="dashboard">
+          <span class="icon"><i class="fas fa-book"></i></span>
+          <span class="title">Dashboard</span>
+        </a></li>
+      {{#if info.loggedIn}}
+      <li><a href="#" id="logout">
+          <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+          <span class="title">Logout</span>
+        </a></li>
+      {{else}}
+      <li><a href="/login" id="login">
+          <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
+          <span class="title">Login</span>
+        </a></li>
+      <li><a href="/create-user" id="create-acc">
+          <span class="icon"><i class="fas fa-plus-square"></i></span>
+          <span class="title">Create Account</span>
+        </a></li>
+      {{/if}}
+
+    </ul>
+  </div>
+
+  {{#if info.loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+  <script>
+    $(".hamburger").click(function () {
+      $(".wrapper").toggleClass("collapse");
+    });
+
+    $(`#{{ info.page }}`).toggleClass("active");
+  </script>

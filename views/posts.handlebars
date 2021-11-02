@@ -1,0 +1,31 @@
+<div class="main_container">
+
+  {{#each posts as |post| }}
+  <div class="item post">
+    <h1>{{post.title}} </h1>
+    <span class="muted-text">#{{post.id}}</span>
+    <h6>by {{ post.user_name}}</h6>
+    <p class="muted-text">Created: {{post.date_created}}</p>
+
+    <a href="/editPost/{{post.id}}" class="editPost hidden" title="Edit Post">
+      <h2 class="icon">Edit</h2>
+    </a>
+    <a href="/api/posts/delete/{{post.id}}" class="editPost deletePost hidden" title="Delete">
+      <h2 class="icon">Delete</h2>
+    </a>
+
+  </div>
+  {{/each}}
+
+  {{#ifEquals navInfo.page "dashboard"}}
+  <a href="/editPost/" class="addPost" title="New Post">
+    <h1 class="icon"><i class="fas fa-plus"></i></h1>
+  </a>
+
+  <script>
+    $(`.editPost`).removeClass("hidden");
+  </script>
+
+  {{/ifEquals}}
+
+</div>

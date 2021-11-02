@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #EEEBDD;
+}
+
+.wrapper {
+    margin: 10px;
+}
+
+.wrapper .top_navbar {
+    width: calc(100% - 20px);
+    height: 60px;
+    display: flex;
+    position: fixed;
+    top: 10px;
+}
+
+.wrapper .top_navbar .hamburger {
+    width: 70px;
+    height: 100%;
+    background: #810000;
+    padding: 15px 17px;
+    border-top-left-radius: 4px;
+    cursor: pointer;
+}
+
+.wrapper .top_navbar .hamburger div {
+    width: 35px;
+    height: 4px;
+    background: #CE1212;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.wrapper .top_navbar .top_menu {
+    width: calc(100% - 70px);
+    height: 100%;
+    background: #1B1717;
+    border-top-right-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .top_navbar .top_menu .logo {
+    color: #EEEBDD;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.wrapper .top_navbar .top_menu ul {
+    display: flex;
+}
+
+.wrapper .top_navbar .top_menu ul li a {
+    display: block;
+    margin: 0 10px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #810000;
+    border-radius: 45%;
+    color: #810000;
+}
+
+.wrapper .top_navbar .top_menu ul li a:hover {
+    background: #CE1212;
+    color: #1B1717;
+}
+
+.wrapper .top_navbar .top_menu ul li a:hover i {
+    color: #1B1717;
+}
+
+.wrapper .sidebar {
+    position: fixed;
+    top: 70px;
+    left: 10px;
+    background: #810000;
+    width: 200px;
+    height: calc(100% - 80px);
+    border-bottom-left-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.wrapper .sidebar ul li a {
+    display: block;
+    padding: 20px;
+    color: #1B1717;
+    position: relative;
+    margin-bottom: 1px;
+    color: #CE1212;
+    white-space: nowrap;
+}
+
+.wrapper .sidebar ul li a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: #CE1212;
+    display: none;
+}
+
+.wrapper .sidebar ul li a span.icon {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.wrapper .sidebar ul li a span.title {
+    display: inline-block;
+}
+
+.wrapper .sidebar ul li a:hover, .wrapper .sidebar ul li a.active {
+    background: #810000;
+    color: #EEEBDD;
+}
+
+.wrapper .sidebar ul li a:hover:before, .wrapper .sidebar ul li a.active:before {
+    display: block;
+}
+
+.wrapper .main_container {
+    width: (100% - 200px);
+    margin-top: 70px;
+    margin-left: 200px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.wrapper .main_container .item {
+    background: #ffffff;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 22px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.20), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.10), 0 16px 16px rgba(0, 0, 0, 0.05);
+}
+
+.hidden {
+    display: none;
+}
+
+.addPost {
+    text-align: center;
+    margin-top: 50px;
+    background: #EEEBDD;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 22px;
+    width: 80%;
+    border-style: solid;
+    border-color: #b3b0a6;
+    border-width: 2px;
+    border-radius: 20px;
+    color: #b3b0a6;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.editPost {
+    color: #1B1717;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+
+.deletePost {
+    color: #CE1212;
+}
+
+.addPost:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.20);
+    transition: 0.5s;
+}
+
+.wrapper.collapse .sidebar {
+    width: 70px;
+}
+
+.wrapper.collapse .sidebar ul li a {
+    text-align: center;
+}
+
+.wrapper.collapse .sidebar ul li a span.icon {
+    margin: 0;
+}
+
+.wrapper.collapse .sidebar ul li a span.title {
+    display: none;
+}
+
+.wrapper.collapse .main_container {
+    width: (100% - 70px);
+    margin-left: 70px;
+}
+
+form {
+    background-color: rgb(233, 233, 233);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.20);
+    margin: auto;
+    width: 350px;
+    height: 80vh;
+    margin-top: 20px;
+    padding: 40px;
+    padding-top: 50px;
+    border-radius: 10px;
+}
+
+form * {
+    margin-top: 25px;
+}
+
+form input {
+    height: 40px;
+    width: 100%;
+    background-color: rgb(223, 223, 223);
+    border-style: none;
+    border-bottom: 2px solid #CE1212;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+form h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+    border-bottom: 2px solid #1B1717;
+    height: 50px;
+}
+
+form button {
+    background-image: linear-gradient(to bottom right, #CE1212, #810000);
+    color: #EEEBDD;
+    height: 50px;
+    width: 100%;
+    border-style: none;
+    border-radius: 10px;
+    border-bottom: 3px solid #810000;
+}
+
+form button:hover {
+    border-style: none;
+    background-image: linear-gradient(to bottom right, #810000, #1B1717);
+    transition: 1s;
+}
